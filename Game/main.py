@@ -34,6 +34,13 @@ def input_handle():
         if event.type == pygame.QUIT:
             sys.exit()
 
+        if event.type == pygame.MOUSEBUTTONUP:
+            x, y = pygame.mouse.get_pos()
+            button = event.button
+
+            if var.scene == 'title':
+                title.mouse_up(x, y, button)
+
 def loop_scene():
     if var.scene == 'title':
         title.loop()
